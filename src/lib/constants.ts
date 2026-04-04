@@ -34,52 +34,88 @@ export type Project = {
 	tech: string[]
 }
 
-export type CvEntry = {
-	role: string
-	company: string
-	companyUrl?: string
-	location: string
+export type CvRole = {
+	title: string
 	period: string
 	highlights: string[]
 }
 
+export type CvEntry = {
+	company: string
+	companyUrl?: string
+	location: string
+	period: string
+	roles: CvRole[]
+}
+
 export const CV_EXPERIENCE: CvEntry[] = [
 	{
-		role: "Senior Product Engineer",
 		company: "Prolific",
 		companyUrl: "https://www.prolific.com/",
 		location: "Remote",
-		period: "2023 — Present",
-		highlights: [
-			"Full-stack product ownership across the Prolific platform, shipping end-to-end features from database to UI.",
-			"Backend services in Python + Django, with MongoDB and Redis for storage and caching.",
-			"Frontend in Vue + TypeScript + SASS, shared across multiple product surfaces.",
-			"Kubernetes for container orchestration and deployment workflows.",
+		period: "Dec 2021 — Present",
+		roles: [
+			{
+				title: "Senior Software Engineer",
+				period: "Sep 2023 — Present",
+				highlights: [
+					"Full-stack product ownership across the Prolific platform, shipping end-to-end features from database to UI.",
+					"Backend services in Python + Django with MongoDB and Redis for storage and caching.",
+					"Frontend in Vue + TypeScript + SASS, shared across multiple product surfaces.",
+					"Kubernetes for container orchestration and deployment workflows.",
+				],
+			},
+			{
+				title: "Frontend Engineer",
+				period: "Dec 2021 — Sep 2023",
+				highlights: [
+					"Built and shipped Vue.js features across the Prolific platform, focused on participant and researcher experiences.",
+					"Collaborated with designers and PMs to turn specs into production-ready UI.",
+					"Promoted to Senior Software Engineer after ~2 years.",
+				],
+			},
 		],
 	},
 	{
-		role: "Software Engineer",
-		company: "Mindera",
+		company: "Mindera UK",
 		companyUrl: "https://mindera.com/",
 		location: "Leicester, United Kingdom",
-		period: "2019 — 2023",
-		highlights: [
-			"Built and maintained the high-scale e-commerce platform for Dunelm, one of the UK's largest home furnishings retailers.",
-			"Worked across React, Node.js, GraphQL, and AWS — from component work to backend services.",
-			"Grew from junior to senior engineer, owning features and mentoring other developers.",
-			"Also contributed to a frontend application for a UK finance company.",
+		period: "Jul 2019 — Nov 2021",
+		roles: [
+			{
+				title: "Full-stack Developer",
+				period: "Mar 2020 — Nov 2021",
+				highlights: [
+					"Built and maintained the full-stack e-commerce platform for Dunelm.com, one of the UK's largest home furnishings retailers.",
+					"Stack: AWS, Node.js, React, GraphQL.",
+					"Shipped features across the storefront, basket, and checkout experiences.",
+				],
+			},
+			{
+				title: "Front-end Developer",
+				period: "Jul 2019 — Mar 2020",
+				highlights: [
+					"Built a React-based web application for a UK finance company.",
+					"Promoted to Full-stack Developer after ~9 months.",
+				],
+			},
 		],
 	},
 	{
-		role: "Web Developer",
 		company: "Invisual Branding Solutions",
 		location: "Aveiro, Portugal",
-		period: "2017 — 2019",
-		highlights: [
-			"WordPress projects for small and medium clients.",
-			"Small internal management apps with PHP.",
-			"Static websites with HTML5 and CSS3.",
-			"Cross-platform mobile apps with PhoneGap.",
+		period: "Sep 2017 — Jan 2019",
+		roles: [
+			{
+				title: "Web Developer",
+				period: "Sep 2017 — Jan 2019",
+				highlights: [
+					"WordPress projects for small and medium clients.",
+					"Small internal management apps with PHP.",
+					"Static websites with HTML5 and CSS3.",
+					"Cross-platform mobile apps with PhoneGap.",
+				],
+			},
 		],
 	},
 ]

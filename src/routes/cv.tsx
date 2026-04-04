@@ -44,79 +44,103 @@ function CvPage() {
 				</button>
 			</div>
 
-			{/* Header */}
-			<header className="mb-12">
-				<h1 className="display text-5xl sm:text-6xl leading-[0.95] tracking-tight mb-4">
-					Fidalgo<span className="text-(--color-accent)">.</span>
-				</h1>
-				<p className="text-lg text-(--color-text-secondary) mb-5">
-					<span className="display-italic">Product engineer</span> building end-to-end. Based in
-					Aveiro, Portugal.
-				</p>
-				<div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-(--color-text-muted) uppercase tracking-wider">
-					<a href={`mailto:${SITE.email}`} className="hover:text-(--color-text) transition-colors">
-						{SITE.email}
-					</a>
-					<span>·</span>
-					<a href={SITE.url} className="hover:text-(--color-text) transition-colors">
-						fidalgo.dev
-					</a>
-					<span>·</span>
-					<a
-						href="https://github.com/fidalgodev/"
-						className="hover:text-(--color-text) transition-colors"
-					>
-						github.com/fidalgodev
-					</a>
-					<span>·</span>
-					<a
-						href="https://www.linkedin.com/in/fidalgodev/"
-						className="hover:text-(--color-text) transition-colors"
-					>
-						linkedin.com/in/fidalgodev
-					</a>
+			{/* Header with photo */}
+			<header className="mb-12 flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+				<img
+					src="/images/me-160.webp"
+					srcSet="/images/me-160.webp 1x, /images/me-320.webp 2x"
+					alt="Fidalgo"
+					width={120}
+					height={120}
+					className="w-24 h-24 sm:w-28 sm:h-28 rounded-full shrink-0"
+				/>
+				<div className="flex-1">
+					<h1 className="display text-5xl sm:text-6xl leading-[0.95] tracking-tight mb-4">
+						Fidalgo<span className="text-(--color-accent)">.</span>
+					</h1>
+					<p className="text-lg text-(--color-text-secondary) mb-5">
+						<span className="display-italic">Product engineer</span> building end-to-end. Based in
+						Aveiro, Portugal.
+					</p>
+					<div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-(--color-text-muted) uppercase tracking-wider">
+						<a
+							href={`mailto:${SITE.email}`}
+							className="hover:text-(--color-text) transition-colors"
+						>
+							{SITE.email}
+						</a>
+						<span>·</span>
+						<a href={SITE.url} className="hover:text-(--color-text) transition-colors">
+							fidalgo.dev
+						</a>
+						<span>·</span>
+						<a
+							href="https://github.com/fidalgodev/"
+							className="hover:text-(--color-text) transition-colors"
+						>
+							github.com/fidalgodev
+						</a>
+						<span>·</span>
+						<a
+							href="https://www.linkedin.com/in/fidalgodev/"
+							className="hover:text-(--color-text) transition-colors"
+						>
+							linkedin.com/in/fidalgodev
+						</a>
+					</div>
 				</div>
 			</header>
 
 			{/* Experience */}
 			<section className="mb-12">
 				<CvSection label="Experience" number="01" />
-				<div className="space-y-8">
+				<div className="space-y-10">
 					{CV_EXPERIENCE.map((entry) => (
 						<div key={`${entry.company}-${entry.period}`}>
-							<div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
-								<h3 className="display text-xl text-(--color-text)">
-									{entry.role} ·{" "}
+							{/* Company header */}
+							<div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1 pb-2 border-b border-(--color-border)">
+								<h3 className="display text-2xl text-(--color-text)">
 									{entry.companyUrl ? (
 										<a
 											href={entry.companyUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="display-italic text-(--color-text-secondary) hover:text-(--color-accent) transition-colors"
+											className="hover:text-(--color-accent) transition-colors"
 										>
 											{entry.company}
 										</a>
 									) : (
-										<span className="display-italic text-(--color-text-secondary)">
-											{entry.company}
-										</span>
+										entry.company
 									)}
 								</h3>
 								<span className="font-mono text-[11px] uppercase tracking-wider text-(--color-text-muted)">
-									{entry.period}
+									{entry.period} · {entry.location}
 								</span>
 							</div>
-							<p className="font-mono text-[10px] uppercase tracking-wider text-(--color-text-muted) mb-3">
-								{entry.location}
-							</p>
-							<ul className="space-y-1.5 text-sm text-(--color-text-secondary) leading-relaxed">
-								{entry.highlights.map((h) => (
-									<li key={h} className="flex gap-2">
-										<span className="text-(--color-text-muted) shrink-0">—</span>
-										<span>{h}</span>
-									</li>
+
+							{/* Roles within the company */}
+							<div className="space-y-5 mt-4">
+								{entry.roles.map((role) => (
+									<div key={role.title}>
+										<div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-2">
+											<h4 className="display-italic text-lg text-(--color-text-secondary)">
+												{role.title}
+											</h4>
+											<span className="font-mono text-[10px] uppercase tracking-wider text-(--color-text-muted)">
+												{role.period}
+											</span>
+										</div>
+										<ul className="space-y-1.5 text-sm text-(--color-text-secondary) leading-relaxed">
+											{role.highlights.map((h) => (
+												<li key={h} className="flex gap-2">
+													<span className="text-(--color-text-muted) shrink-0">—</span>
+													<span>{h}</span>
+												</li>
+											))}
+										</ul>
+									</div>
 								))}
-							</ul>
+							</div>
 						</div>
 					))}
 				</div>

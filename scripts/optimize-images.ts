@@ -21,12 +21,21 @@ async function optimizePortrait(inputPath: string, name: string) {
 }
 
 async function optimizeAvatar(inputPath: string) {
+	// Square crop for nav avatar (multiple densities)
 	for (const size of [48, 96]) {
 		await sharp(inputPath)
 			.resize(size, size, { fit: "cover" })
 			.webp({ quality: 85 })
 			.toFile(resolve(OUT, `avatar-${size}.webp`))
 		console.log(`✓ avatar-${size}.webp`)
+	}
+	// Larger square crop for the CV header
+	for (const size of [160, 320]) {
+		await sharp(inputPath)
+			.resize(size, size, { fit: "cover" })
+			.webp({ quality: 88 })
+			.toFile(resolve(OUT, `me-${size}.webp`))
+		console.log(`✓ me-${size}.webp`)
 	}
 }
 
