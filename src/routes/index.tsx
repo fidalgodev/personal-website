@@ -126,8 +126,12 @@ function HomePage() {
 								srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
 								sizes="(min-width: 768px) 45vw, 100vw"
 								alt="Fidalgo working at his desk"
+								width={720}
+								height={900}
 								className="w-full h-full object-cover grayscale-[0.15] hover:grayscale-0 transition-[filter] duration-700"
 								loading="eager"
+								fetchPriority="high"
+								decoding="async"
 							/>
 						</div>
 						<div className="mt-3 flex items-center justify-between text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase">

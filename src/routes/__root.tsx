@@ -17,6 +17,21 @@ export const Route = createRootRoute({
 			{ name: "description", content: SITE.description },
 		],
 		links: [
+			// Preload critical fonts so browser fetches in parallel with CSS
+			{
+				rel: "preload",
+				href: "/fonts/inter-variable.woff2",
+				as: "font",
+				type: "font/woff2",
+				crossOrigin: "anonymous",
+			},
+			{
+				rel: "preload",
+				href: "/fonts/instrument-serif-regular.woff2",
+				as: "font",
+				type: "font/woff2",
+				crossOrigin: "anonymous",
+			},
 			{ rel: "stylesheet", href: appCss },
 			{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
 			{ rel: "alternate", type: "application/rss+xml", title: SITE.name, href: "/rss.xml" },
