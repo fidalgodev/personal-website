@@ -69,6 +69,12 @@
 
 /* ── Base Styles ── */
 
+/* Restore pointer cursor on buttons (Tailwind v4 removes it in preflight) */
+button:not(:disabled),
+[role="button"]:not(:disabled) {
+	cursor: pointer;
+}
+
 body {
 	font-family: var(--font-sans);
 	background-color: var(--color-bg);
