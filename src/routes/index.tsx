@@ -53,43 +53,65 @@ function HomePage() {
 		<div className="relative z-10">
 			{/* Hero — asymmetric two-column with display serif + portrait photo */}
 			<section className="max-w-5xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-28">
-				<div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 md:gap-14 items-start">
+				<div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 md:gap-14 items-stretch">
 					{/* Left: typography */}
-					<div className="order-2 md:order-1">
-						<div className="fade-up delay-1 flex items-center gap-3 mb-8">
-							<span className="font-mono text-[10px] tracking-[0.18em] uppercase text-(--color-text-muted)">
-								PF · Aveiro, Portugal
-							</span>
+					<div className="flex flex-col justify-between">
+						<div>
+							<div className="fade-up delay-1 flex items-center gap-3 mb-8">
+								<span className="font-mono text-[10px] tracking-[0.18em] uppercase text-(--color-text-muted)">
+									PF · Aveiro, Portugal
+								</span>
+							</div>
+
+							<h1 className="fade-up delay-2 display text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-6">
+								<span className="display-italic text-(--color-text-secondary)">Product</span>
+								<br />
+								Engineer<span className="text-(--color-accent)">.</span>
+							</h1>
+
+							<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-6">
+								I ship full products from database to UI.{" "}
+								<span className="display-italic text-(--color-text)">
+									Self-taught, endlessly curious,
+								</span>{" "}
+								and always building something on the side.
+							</p>
+
+							<div className="fade-up delay-4 flex items-center gap-3">
+								<span className="relative flex h-2 w-2">
+									<span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-(--color-green-dot) opacity-60" />
+									<span className="relative inline-flex h-2 w-2 rounded-full bg-(--color-green-dot)" />
+								</span>
+								<span className="font-mono text-[11px] tracking-wider uppercase text-(--color-text-muted)">
+									Open to interesting conversations
+								</span>
+							</div>
 						</div>
 
-						<h1 className="fade-up delay-2 display text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-6">
-							<span className="display-italic text-(--color-text-secondary)">Product</span>
-							<br />
-							Engineer<span className="text-(--color-accent)">.</span>
-						</h1>
-
-						<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-6">
-							I ship full products from database to UI.{" "}
-							<span className="display-italic text-(--color-text)">
-								Self-taught, endlessly curious,
-							</span>{" "}
-							and always building something on the side.
-						</p>
-
-						<div className="fade-up delay-4 flex items-center gap-3">
-							<span className="relative flex h-2 w-2">
-								<span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-(--color-green-dot) opacity-60" />
-								<span className="relative inline-flex h-2 w-2 rounded-full bg-(--color-green-dot)" />
-							</span>
-							<span className="font-mono text-[11px] tracking-wider uppercase text-(--color-text-muted)">
-								Open to interesting conversations
-							</span>
+						{/* Signature block — fills the empty space and balances the image column */}
+						<div className="fade-up delay-5 hidden md:flex flex-col gap-3 mt-10 pt-6 border-t border-(--color-border)">
+							<div className="grid grid-cols-2 gap-6">
+								<div>
+									<p className="font-mono text-[10px] tracking-wider uppercase text-(--color-text-muted) mb-1">
+										Currently
+									</p>
+									<p className="text-sm text-(--color-text)">Senior Product Engineer at Prolific</p>
+								</div>
+								<div>
+									<p className="font-mono text-[10px] tracking-wider uppercase text-(--color-text-muted) mb-1">
+										Stack
+									</p>
+									<p className="text-sm text-(--color-text)">
+										React · TypeScript · Node · Postgres
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 
 					{/* Right: portrait photo with subtle frame */}
-					<div className="fade-up delay-2 order-1 md:order-2 relative">
-						<div className="relative aspect-[4/5] overflow-hidden">
+					<div className="fade-up delay-2 relative flex flex-col">
+						<div className="relative aspect-[4/5] overflow-hidden flex-1">
 							<img
 								src="/images/portrait-720w.webp"
 								srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
