@@ -5,17 +5,6 @@
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
-	"files": {
-		"ignoreUnknown": true,
-		"includes": [
-			"**",
-			"!dist",
-			"!.content-collections",
-			"!.vinxi",
-			"!src/routeTree.gen.ts",
-			"!.claude"
-		]
-	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
@@ -36,6 +25,29 @@
 			"quoteStyle": "double",
 			"semicolons": "asNeeded"
 		}
+	},
+	"css": {
+		"parser": {
+			"cssModules": false
+		},
+		"linter": {
+			"enabled": false
+		},
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": [
+			"**",
+			"!dist",
+			"!.content-collections",
+			"!.vinxi",
+			"!src/routeTree.gen.ts",
+			"!.claude",
+			"!src/styles/app.css"
+		]
 	},
 	"assist": {
 		"enabled": true,
