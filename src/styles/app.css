@@ -163,6 +163,48 @@ body::before {
 	animation-delay: 0.45s;
 }
 
+/* ── Hero portrait treatment: fade into background ── */
+
+.hero-portrait-wrap {
+	position: relative;
+}
+
+.hero-portrait {
+	filter: grayscale(0.35) contrast(1.05);
+	transition: filter 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black 8%,
+		black 78%,
+		transparent 100%
+	);
+	mask-image: linear-gradient(
+		to bottom,
+		transparent 0%,
+		black 8%,
+		black 78%,
+		transparent 100%
+	);
+}
+
+.hero-portrait-wrap:hover .hero-portrait {
+	filter: grayscale(0) contrast(1);
+}
+
+/* Soft vignette via box-shadow-like inset */
+.hero-portrait-wrap::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: radial-gradient(
+		ellipse at center,
+		transparent 55%,
+		color-mix(in srgb, var(--color-bg) 40%, transparent) 100%
+	);
+}
+
 /* ── Reveal underline on hover ── */
 
 .hover-underline {
