@@ -109,7 +109,7 @@ function HomePage() {
 			</section>
 
 			{/* About */}
-			<section className="max-w-5xl mx-auto px-6 py-20 sm:py-24 border-t border-(--color-border)">
+			<section className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
 				<SectionLabel number="01">About</SectionLabel>
 				<div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-14">
 					<p className="display text-2xl sm:text-3xl leading-tight text-(--color-text)">
@@ -146,10 +146,7 @@ function HomePage() {
 			</section>
 
 			{/* Projects */}
-			<section
-				id="projects"
-				className="max-w-5xl mx-auto px-6 py-20 sm:py-24 border-t border-(--color-border)"
-			>
+			<section id="projects" className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
 				<SectionLabel number="02">Selected Work</SectionLabel>
 				<div>
 					{PROJECTS.map((project, i) => (
@@ -159,7 +156,7 @@ function HomePage() {
 			</section>
 
 			{/* Latest Posts */}
-			<section className="max-w-5xl mx-auto px-6 py-20 sm:py-24 border-t border-(--color-border)">
+			<section className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
 				<SectionLabel number="03">Writing</SectionLabel>
 				{publishedPosts.length === 0 ? (
 					<div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-14">
