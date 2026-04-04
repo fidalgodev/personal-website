@@ -105,15 +105,19 @@ function HomePage() {
 								href="https://www.linkedin.com/in/fidalgodev/"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
+								className="group inline-flex items-center gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
 							>
-								LinkedIn
+								<span>LinkedIn</span>
+								<span className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+									↗
+								</span>
 							</a>
 							<Link
 								to="/cv"
-								className="font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
+								className="group inline-flex items-center gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
 							>
-								CV →
+								<span>CV</span>
+								<span className="transition-transform group-hover:translate-x-0.5">→</span>
 							</Link>
 						</div>
 					</div>

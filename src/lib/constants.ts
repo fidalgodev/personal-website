@@ -23,7 +23,6 @@ export const SOCIALS = [
 		label: "LinkedIn profile",
 	},
 	{ name: "X", url: "https://x.com/fidalgodev", label: "X (Twitter) profile" },
-	{ name: "YouTube", url: "https://youtube.com/c/fidalgodev", label: "YouTube channel" },
 	{ name: "Instagram", url: "https://instagram.com/fidalgo.dev", label: "Instagram profile" },
 ] as const
 
