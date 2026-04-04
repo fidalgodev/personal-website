@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router"
+import { createRootRoute, HeadContent, Link, Outlet, Scripts } from "@tanstack/react-router"
 import type { ReactNode } from "react"
 import { Footer } from "~/components/footer"
 import { Nav } from "~/components/nav"
@@ -24,6 +24,20 @@ export const Route = createRootRoute({
 		],
 	}),
 	component: RootComponent,
+	notFoundComponent: () => (
+		<div className="max-w-3xl mx-auto px-6 py-24 text-center">
+			<h1 className="text-4xl font-medium mb-4">404</h1>
+			<p className="text-(--color-text-secondary) mb-8">
+				This page doesn't exist. Maybe it was moved or you mistyped the URL.
+			</p>
+			<Link
+				to="/"
+				className="text-sm text-(--color-accent) underline underline-offset-2 hover:no-underline"
+			>
+				Back to home
+			</Link>
+		</div>
+	),
 })
 
 function RootComponent() {
