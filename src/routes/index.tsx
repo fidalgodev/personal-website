@@ -58,13 +58,11 @@ function HomePage() {
 					<div className="order-2 md:order-1">
 						<div className="fade-up delay-1 flex items-center gap-3 mb-8">
 							<span className="font-mono text-[10px] tracking-[0.18em] uppercase text-(--color-text-muted)">
-								PF · Aveiro, PT · Est. 2019
+								PF · Aveiro, Portugal
 							</span>
 						</div>
 
 						<h1 className="fade-up delay-2 display text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-6">
-							Senior
-							<br />
 							<span className="display-italic text-(--color-text-secondary)">Product</span>
 							<br />
 							Engineer<span className="text-(--color-accent)">.</span>
