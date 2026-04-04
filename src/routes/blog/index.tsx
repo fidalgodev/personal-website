@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { allPosts } from "content-collections"
 import { PostItem } from "~/components/post-item"
-import { SectionLabel } from "~/components/section-label"
 import { SITE } from "~/lib/constants"
 
 const publishedPosts = allPosts
@@ -36,14 +35,24 @@ export const Route = createFileRoute("/blog/")({
 
 function BlogPage() {
 	return (
-		<div className="max-w-3xl mx-auto px-6 py-16">
-			<SectionLabel as="p">Blog</SectionLabel>
-			<h1 className="text-2xl font-medium mb-8">Writing</h1>
+		<div className="max-w-5xl mx-auto px-6 py-20 sm:py-24 relative z-10">
+			<p className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--color-text-muted) mb-4">
+				Writing · Essays · Notes
+			</p>
+			<h1 className="display text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-10">
+				The <span className="display-italic text-(--color-text-secondary)">Blog</span>
+			</h1>
+			<div className="w-full h-px bg-(--color-border) mb-12" />
 			{publishedPosts.length === 0 ? (
-				<p className="text-sm text-(--color-text-muted) italic">
-					No posts yet — but they're coming. I'll be writing about building products, technical deep
-					dives, and lessons from shipping side projects.
-				</p>
+				<div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-14">
+					<p className="display text-2xl leading-tight text-(--color-text-secondary)">
+						<span className="display-italic">Soon.</span>
+					</p>
+					<p className="text-(--color-text-secondary) leading-relaxed max-w-prose">
+						No posts yet — but they're coming. I'll be writing about building products, technical
+						deep dives, and lessons from shipping side projects.
+					</p>
+				</div>
 			) : (
 				<div>
 					{publishedPosts.map((post) => (
@@ -55,6 +64,7 @@ function BlogPage() {
 								month: "short",
 								day: "numeric",
 							})}
+							dateIso={post.date}
 							description={post.description}
 							slug={post.slug}
 							tags={post.tags}

@@ -8,14 +8,15 @@ if (!existsSync(OUT)) {
 	mkdirSync(OUT, { recursive: true })
 }
 
-async function optimizeWorkingPhoto(inputPath: string) {
-	const widths = [640, 1280, 1920]
+async function optimizePortrait(inputPath: string, name: string) {
+	// Portrait widths — smaller since the image sits in a column, not full-bleed
+	const widths = [480, 720, 1080]
 	for (const w of widths) {
 		await sharp(inputPath)
 			.resize(w)
-			.webp({ quality: 80 })
-			.toFile(resolve(OUT, `working-${w}w.webp`))
-		console.log(`✓ working-${w}w.webp`)
+			.webp({ quality: 82 })
+			.toFile(resolve(OUT, `${name}-${w}w.webp`))
+		console.log(`✓ ${name}-${w}w.webp`)
 	}
 }
 
@@ -38,17 +39,17 @@ async function createOgImage(inputPath: string) {
 }
 
 async function main() {
-	const workingInput = process.argv[2]
+	const portraitInput = process.argv[2]
 	const avatarInput = process.argv[3]
 
-	if (!workingInput || !avatarInput) {
-		console.error("Usage: npx tsx scripts/optimize-images.ts <working-photo> <avatar-photo>")
+	if (!portraitInput || !avatarInput) {
+		console.error("Usage: npx tsx scripts/optimize-images.ts <portrait-photo> <avatar-photo>")
 		process.exit(1)
 	}
 
-	await optimizeWorkingPhoto(workingInput)
+	await optimizePortrait(portraitInput, "portrait")
 	await optimizeAvatar(avatarInput)
-	await createOgImage(workingInput)
+	await createOgImage(portraitInput)
 	console.log("\nAll images optimized!")
 }
 

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { SectionLabel } from "~/components/section-label"
 import { SITE } from "~/lib/constants"
 
 export const Route = createFileRoute("/uses")({
@@ -103,26 +102,37 @@ const USES: UsesCategory[] = [
 
 function UsesPage() {
 	return (
-		<div className="max-w-3xl mx-auto px-6 py-16">
-			<SectionLabel as="p">Uses</SectionLabel>
-			<h1 className="text-2xl font-medium mb-3">What I use</h1>
-			<p className="text-(--color-text-secondary) mb-12">
-				Tools, software, and hardware that power my daily workflow.
+		<div className="max-w-5xl mx-auto px-6 py-20 sm:py-24 relative z-10">
+			<p className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--color-text-muted) mb-4">
+				Hardware · Software · Stack
+			</p>
+			<h1 className="display text-5xl sm:text-6xl md:text-7xl leading-[0.95] tracking-tight mb-6">
+				What I <span className="display-italic text-(--color-text-secondary)">use</span>
+			</h1>
+			<p className="text-(--color-text-secondary) max-w-xl mb-16 leading-relaxed">
+				Tools, software, and hardware that power my daily workflow. Constantly evolving, rarely
+				settled.
 			</p>
 
-			<div className="space-y-12">
-				{USES.map((category) => (
+			<div className="space-y-16">
+				{USES.map((category, index) => (
 					<section key={category.name}>
-						<h2 className="text-lg font-medium mb-4 pb-2 border-b border-(--color-border)">
-							{category.name}
-						</h2>
-						<ul className="space-y-3">
+						<div className="flex items-baseline gap-4 mb-8">
+							<span className="display text-3xl text-(--color-text-muted) leading-none tabular-nums">
+								{String(index + 1).padStart(2, "0")}
+							</span>
+							<h2 className="text-xs uppercase tracking-[0.25em] text-(--color-text-muted)">
+								{category.name}
+							</h2>
+							<div className="flex-1 h-px bg-(--color-border) translate-y-[-4px]" />
+						</div>
+						<ul className="grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
 							{category.items.map((item) => (
-								<li key={item.name} className="flex gap-3">
-									<span className="text-(--color-text) font-medium text-sm shrink-0">
+								<li key={item.name} className="group">
+									<div className="display text-xl text-(--color-text) group-hover:text-(--color-accent) transition-colors">
 										{item.name}
-									</span>
-									<span className="text-sm text-(--color-text-muted)">— {item.note}</span>
+									</div>
+									<div className="text-sm text-(--color-text-muted) mt-0.5">{item.note}</div>
 								</li>
 							))}
 						</ul>

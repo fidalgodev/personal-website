@@ -3,7 +3,7 @@ import { ThemeToggle } from "./theme-toggle"
 
 export function Nav() {
 	return (
-		<nav className="flex items-center justify-between py-5 px-6 max-w-5xl mx-auto w-full">
+		<nav className="relative z-20 flex items-center justify-between py-5 px-6 max-w-5xl mx-auto w-full">
 			<Link to="/" className="flex items-center gap-2.5 group" aria-label="Home">
 				<img
 					src="/images/avatar-48.webp"
