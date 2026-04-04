@@ -121,7 +121,7 @@ function CvPage() {
 							{/* Roles within the company */}
 							<div className="space-y-5 mt-4">
 								{entry.roles.map((role) => (
-									<div key={role.title}>
+									<div key={role.title} className="cv-block">
 										<div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-2">
 											<h4 className="display-italic text-lg text-(--color-text-secondary)">
 												{role.title}
@@ -151,7 +151,7 @@ function CvPage() {
 				<CvSection label="Selected Projects" number="02" />
 				<div className="space-y-5">
 					{PROJECTS.map((project) => (
-						<div key={project.name}>
+						<div key={project.name} className="cv-block">
 							<div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
 								<h3 className="display text-lg text-(--color-text)">{project.name}</h3>
 								<a
@@ -194,7 +194,7 @@ function CvPage() {
 				<CvSection label="Education" number="04" />
 				<div className="space-y-5">
 					{CV_EDUCATION.map((edu) => (
-						<div key={edu.title}>
+						<div key={edu.title} className="cv-block">
 							<div className="flex flex-wrap items-baseline justify-between gap-x-4 mb-1">
 								<h3 className="display text-lg text-(--color-text)">{edu.title}</h3>
 								<span className="font-mono text-[11px] uppercase tracking-wider text-(--color-text-muted)">

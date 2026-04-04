@@ -222,7 +222,9 @@ body::before {
 		page-break-after: avoid;
 	}
 
-	.cv-page section {
+	/* Keep small, discrete blocks together — but NOT whole sections
+	   (large sections cause page 1 to go mostly blank) */
+	.cv-page .cv-block {
 		page-break-inside: avoid;
 	}
 }

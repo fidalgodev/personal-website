@@ -14,7 +14,7 @@ export function Nav() {
 					className="rounded-full w-8 h-8"
 				/>
 				<span className="text-sm font-semibold text-(--color-text) group-hover:opacity-70 transition-opacity">
-					fidalgo
+					Fidalgo
 				</span>
 			</Link>
 			<div className="flex items-center gap-5 sm:gap-6">
