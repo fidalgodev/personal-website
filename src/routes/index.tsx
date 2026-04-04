@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 				children: JSON.stringify({
 					"@context": "https://schema.org",
 					"@type": "Person",
-					name: "Pedro Fidalgo",
+					name: "Fidalgo",
 					url: SITE.url,
 					jobTitle: "Senior Product Engineer",
 					worksFor: { "@type": "Organization", name: "Prolific" },
@@ -53,7 +53,7 @@ function HomePage() {
 		<div className="relative z-10">
 			{/* Hero — asymmetric two-column with display serif + portrait photo */}
 			<section className="max-w-5xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-28">
-				<div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-10 md:gap-14 items-stretch">
+				<div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-10 md:gap-14 items-stretch">
 					{/* Left: typography */}
 					<div className="flex flex-col justify-between">
 						<div>
@@ -111,12 +111,12 @@ function HomePage() {
 
 					{/* Right: portrait photo with subtle frame */}
 					<div className="fade-up delay-2 relative flex flex-col">
-						<div className="relative aspect-[4/5] overflow-hidden flex-1">
+						<div className="relative aspect-[3/4] overflow-hidden flex-1">
 							<img
 								src="/images/portrait-720w.webp"
 								srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
 								sizes="(min-width: 768px) 45vw, 100vw"
-								alt="Pedro Fidalgo working at his desk"
+								alt="Fidalgo working at his desk"
 								className="w-full h-full object-cover grayscale-[0.15] hover:grayscale-0 transition-[filter] duration-700"
 								loading="eager"
 							/>
@@ -140,7 +140,7 @@ function HomePage() {
 						Building since 2019.
 					</p>
 					<div className="space-y-5 text-(--color-text-secondary) leading-relaxed max-w-prose">
-						<p>I'm Pedro — a software engineer based in Aveiro, Portugal.</p>
+						<p>I'm Fidalgo — a software engineer based in Aveiro, Portugal.</p>
 						<p>
 							In 2018, I decided it was time for a change. I started teaching myself JavaScript
 							before work, fell in love with it, and in January 2019 I quit my job to go all in. Six

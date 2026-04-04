@@ -44,7 +44,7 @@ export function Footer() {
 						</a>
 					</div>
 					<p className="text-xs font-mono uppercase tracking-wider text-(--color-text-muted)">
-						© {year} · Pedro Fidalgo · Made with care
+						© {year} · Fidalgo · Made with care
 					</p>
 				</div>
 			</div>

@@ -39,7 +39,7 @@ export const Route = createFileRoute("/blog/$slug")({
 						datePublished: post.date,
 						author: {
 							"@type": "Person",
-							name: "Pedro Fidalgo",
+							name: "Fidalgo",
 							url: SITE.url,
 						},
 					}),

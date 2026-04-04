@@ -8,13 +8,13 @@ export function Nav() {
 				<img
 					src="/images/avatar-48.webp"
 					srcSet="/images/avatar-48.webp 1x, /images/avatar-96.webp 2x"
-					alt="Pedro Fidalgo"
+					alt="Fidalgo"
 					width={32}
 					height={32}
 					className="rounded-full w-8 h-8"
 				/>
 				<span className="text-sm font-semibold text-(--color-text) group-hover:opacity-70 transition-opacity">
-					pedro fidalgo
+					fidalgo
 				</span>
 			</Link>
 			<div className="flex items-center gap-5 sm:gap-6">

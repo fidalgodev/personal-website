@@ -1,6 +1,6 @@
 export const SITE = {
 	name: "fidalgo.dev",
-	title: "Pedro Fidalgo — Product Engineer",
+	title: "Fidalgo — Product Engineer",
 	description:
 		"Product engineer building end-to-end. Currently at Prolific with Python and Vue. Personal stack: React, TypeScript, Node, Tailwind.",
 	url: "https://fidalgo.dev",
