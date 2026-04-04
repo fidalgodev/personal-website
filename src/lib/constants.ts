@@ -5,6 +5,7 @@ export const SITE = {
 		"Senior Product Engineer building end-to-end. Currently at Prolific with Python and Vue. Personal stack: React, TypeScript, Node, Tailwind.",
 	url: "https://fidalgo.dev",
 	email: "hello@fidalgo.dev",
+	cv: "/cv.pdf",
 	ogImage: "/images/og-image.jpg",
 } as const
 
@@ -33,20 +34,20 @@ export const PROJECTS: Project[] = [
 		description:
 			"Zero-based budgeting made simple. A full-stack SaaS I built and run with real users.",
 		url: "https://zerosum.so/",
-		tech: ["React", "Tailwind", "Hono", "tRPC", "Postgres"],
+		tech: ["React", "TypeScript", "Tailwind", "Hono", "tRPC", "Postgres"],
 	},
 	{
 		name: "Liga do Tinto",
 		description:
 			"A custom fantasy league dashboard for my friend group. Replaced a clunky website and messy spreadsheets with proper stats and split-season tracking.",
 		url: "https://ligarecord.fidalgo.dev/",
-		tech: ["React", "Node"],
+		tech: ["React", "TypeScript", "Vite", "Tailwind"],
 	},
 	{
 		name: "Movie Library",
 		description:
 			"A React app for browsing and discovering movies. One of my earlier projects that helped me learn React and working with external APIs.",
 		url: "https://movies.fidalgo.dev/",
-		tech: ["React"],
+		tech: ["React", "Redux", "React Router", "Styled Components", "SASS"],
 	},
 ]

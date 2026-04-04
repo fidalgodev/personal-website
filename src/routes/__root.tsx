@@ -58,12 +58,14 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="bg-(--color-bg) text-(--color-text) transition-colors">
+			<body className="bg-(--color-bg) text-(--color-text) transition-colors min-h-dvh flex flex-col">
 				<a href="#main" className="skip-link">
 					Skip to content
 				</a>
 				<Nav />
-				<main id="main">{children}</main>
+				<main id="main" className="flex-1">
+					{children}
+				</main>
 				<Footer />
 				<Scripts />
 			</body>
