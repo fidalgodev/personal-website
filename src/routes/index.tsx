@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
+import { allPosts } from "content-collections"
+import { PostItem } from "~/components/post-item"
 import { ProjectItem } from "~/components/project-item"
 import { SectionLabel } from "~/components/section-label"
 import { PROJECTS, SITE } from "~/lib/constants"
@@ -118,10 +120,40 @@ function HomePage() {
 			{/* Latest Posts */}
 			<section className="max-w-3xl mx-auto px-6 py-16">
 				<SectionLabel>Latest Posts</SectionLabel>
-				<p className="text-sm text-(--color-text-muted) italic">
-					No posts yet — but they're coming. I'll be writing about building products, technical deep
-					dives, and lessons from shipping side projects.
-				</p>
+				{(() => {
+					const published = allPosts
+						.filter((p) => !p.draft)
+						.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+						.slice(0, 3)
+
+					if (published.length === 0) {
+						return (
+							<p className="text-sm text-(--color-text-muted) italic">
+								No posts yet — but they're coming. I'll be writing about building products,
+								technical deep dives, and lessons from shipping side projects.
+							</p>
+						)
+					}
+
+					return (
+						<div>
+							{published.map((post) => (
+								<PostItem
+									key={post.slug}
+									title={post.title}
+									date={new Date(post.date).toLocaleDateString("en-US", {
+										year: "numeric",
+										month: "short",
+										day: "numeric",
+									})}
+									description={post.description}
+									slug={post.slug}
+									tags={post.tags}
+								/>
+							))}
+						</div>
+					)
+				})()}
 			</section>
 		</div>
 	)
