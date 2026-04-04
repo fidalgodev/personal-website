@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router"
 import { SITE, SOCIALS } from "~/lib/constants"
 
 export function Footer() {
@@ -33,15 +34,13 @@ export function Footer() {
 								{social.name}
 							</a>
 						))}
-						<a
-							href={SITE.cv}
-							target="_blank"
-							rel="noopener noreferrer"
+						<Link
+							to="/cv"
 							className="text-xs font-mono uppercase tracking-wider text-(--color-text-muted) hover:text-(--color-text) transition-colors"
-							aria-label="Download CV"
+							aria-label="View CV"
 						>
 							CV
-						</a>
+						</Link>
 					</div>
 					<p className="text-xs font-mono uppercase tracking-wider text-(--color-text-muted)">
 						© {year} · Fidalgo · Made with care

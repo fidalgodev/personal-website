@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsesRouteImport } from './routes/uses'
 import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
+import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
@@ -23,6 +24,11 @@ const UsesRoute = UsesRouteImport.update({
 const RssDotxmlRoute = RssDotxmlRouteImport.update({
   id: '/rss.xml',
   path: '/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CvRoute = CvRouteImport.update({
+  id: '/cv',
+  path: '/cv',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,6 +49,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/uses': typeof UsesRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/uses': typeof UsesRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cv': typeof CvRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/uses': typeof UsesRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -65,14 +74,15 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog/'
+  fullPaths: '/' | '/cv' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog'
-  id: '__root__' | '/' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog/'
+  to: '/' | '/cv' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog'
+  id: '__root__' | '/' | '/cv' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CvRoute: typeof CvRoute
   RssDotxmlRoute: typeof RssDotxmlRoute
   UsesRoute: typeof UsesRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -93,6 +103,13 @@ declare module '@tanstack/react-router' {
       path: '/rss.xml'
       fullPath: '/rss.xml'
       preLoaderRoute: typeof RssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cv': {
+      id: '/cv'
+      path: '/cv'
+      fullPath: '/cv'
+      preLoaderRoute: typeof CvRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -121,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CvRoute: CvRoute,
   RssDotxmlRoute: RssDotxmlRoute,
   UsesRoute: UsesRoute,
   BlogSlugRoute: BlogSlugRoute,

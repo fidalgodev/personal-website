@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { allPosts } from "content-collections"
 import { PostItem } from "~/components/post-item"
 import { ProjectItem } from "~/components/project-item"
@@ -109,14 +109,12 @@ function HomePage() {
 							>
 								LinkedIn
 							</a>
-							<a
-								href={SITE.cv}
-								target="_blank"
-								rel="noopener noreferrer"
+							<Link
+								to="/cv"
 								className="font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
 							>
-								CV ↓
-							</a>
+								CV →
+							</Link>
 						</div>
 					</div>
 

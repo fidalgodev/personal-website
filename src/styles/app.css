@@ -163,6 +163,64 @@ body::before {
 	animation-delay: 0.45s;
 }
 
+/* ── Print styles (for CV page → Save as PDF) ── */
+
+@media print {
+	@page {
+		size: A4;
+		margin: 16mm 14mm;
+	}
+
+	html {
+		background: #ffffff !important;
+	}
+
+	body {
+		background: #ffffff !important;
+		color: #111111 !important;
+		font-size: 10pt;
+		line-height: 1.45;
+	}
+
+	body::before {
+		display: none !important;
+	}
+
+	nav,
+	footer,
+	.skip-link,
+	.no-print {
+		display: none !important;
+	}
+
+	main {
+		padding: 0 !important;
+	}
+
+	a {
+		color: #111111 !important;
+		text-decoration: none !important;
+	}
+
+	.cv-page {
+		max-width: 100% !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		color: #111111 !important;
+	}
+
+	.cv-page h1,
+	.cv-page h2,
+	.cv-page h3 {
+		color: #111111 !important;
+		page-break-after: avoid;
+	}
+
+	.cv-page section {
+		page-break-inside: avoid;
+	}
+}
+
 /* ── Reveal underline on hover ── */
 
 .hover-underline {
