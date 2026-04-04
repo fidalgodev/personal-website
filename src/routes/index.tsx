@@ -54,44 +54,24 @@ function HomePage() {
 
 	return (
 		<div className="relative z-10">
-			{/* Hero — full-bleed image on the right, text on left inside container */}
-			<section className="relative pt-10 sm:pt-16 pb-20 sm:pb-28 overflow-hidden">
-				{/* Desktop: absolute full-bleed image pinned to right edge of viewport */}
-				<div
-					className="fade-up delay-2 hidden md:block absolute top-10 bottom-20 right-0"
-					style={{ width: "min(48vw, 640px)" }}
-				>
-					<img
-						src="/images/portrait-1080w.webp"
-						srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
-						sizes="48vw"
-						alt="Fidalgo working at his desk"
-						className="w-full h-full object-cover object-center grayscale-[0.15] hover:grayscale-0 transition-[filter] duration-700"
-						loading="eager"
-					/>
-					{/* Caption */}
-					<div className="absolute -bottom-8 left-0 right-6 flex items-center justify-between text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase">
-						<span>Fig. 01 — The Studio</span>
-						<span>Aveiro / PT</span>
-					</div>
-				</div>
-
-				{/* Content container */}
-				<div className="max-w-5xl mx-auto px-6">
-					<div className="md:max-w-[55%]">
-						<div className="fade-up delay-1 flex items-center gap-3 mb-8">
+			{/* Hero — balanced 2-column with contained portrait */}
+			<section className="max-w-5xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24">
+				<div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 md:gap-12 lg:gap-16 items-center">
+					{/* Text */}
+					<div className="order-1">
+						<div className="fade-up delay-1 flex items-center gap-3 mb-7">
 							<span className="font-mono text-[10px] tracking-[0.18em] uppercase text-(--color-text-muted)">
 								PF · Aveiro, Portugal · {new Date().getFullYear()}
 							</span>
 						</div>
 
-						<h1 className="fade-up delay-2 display text-6xl sm:text-7xl md:text-8xl leading-[0.9] tracking-tight mb-8">
+						<h1 className="fade-up delay-2 display text-5xl sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-6">
 							<span className="display-italic text-(--color-text-secondary)">Product</span>
 							<br />
 							Engineer<span className="text-(--color-accent)">.</span>
 						</h1>
 
-						<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-8">
+						<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-6">
 							I ship full products from database to UI.{" "}
 							<span className="display-italic text-(--color-text)">
 								Self-taught, endlessly curious,
@@ -99,25 +79,7 @@ function HomePage() {
 							and always building something on the side.
 						</p>
 
-						{/* Mobile-only portrait image */}
-						<div className="fade-up delay-4 md:hidden relative my-10 -mx-6">
-							<div className="relative aspect-[3/4] overflow-hidden">
-								<img
-									src="/images/portrait-720w.webp"
-									srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
-									sizes="100vw"
-									alt="Fidalgo working at his desk"
-									className="w-full h-full object-cover grayscale-[0.15]"
-									loading="eager"
-								/>
-							</div>
-							<div className="flex items-center justify-between mt-3 px-6 text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase">
-								<span>Fig. 01</span>
-								<span>Aveiro / PT</span>
-							</div>
-						</div>
-
-						<div className="fade-up delay-4 flex items-center gap-3 mb-12">
+						<div className="fade-up delay-4 flex items-center gap-3 mb-8">
 							<span className="relative flex h-2 w-2">
 								<span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-(--color-green-dot) opacity-60" />
 								<span className="relative inline-flex h-2 w-2 rounded-full bg-(--color-green-dot)" />
@@ -127,8 +89,8 @@ function HomePage() {
 							</span>
 						</div>
 
-						{/* Primary CTA — makes email very visible */}
-						<div className="fade-up delay-5 flex flex-wrap items-center gap-x-6 gap-y-3 pt-6 border-t border-(--color-border)">
+						{/* CTA row */}
+						<div className="fade-up delay-5 flex flex-wrap items-center gap-x-5 gap-y-3 pt-6 border-t border-(--color-border)">
 							<a
 								href={`mailto:${SITE.email}`}
 								className="group inline-flex items-center gap-2 text-(--color-text) hover:text-(--color-accent) transition-colors"
@@ -155,6 +117,24 @@ function HomePage() {
 							>
 								CV ↓
 							</a>
+						</div>
+					</div>
+
+					{/* Portrait — natural 4:5 aspect */}
+					<div className="fade-up delay-2 order-2">
+						<div className="relative aspect-[4/5] overflow-hidden">
+							<img
+								src="/images/portrait-720w.webp"
+								srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
+								sizes="(min-width: 768px) 45vw, 100vw"
+								alt="Fidalgo working at his desk"
+								className="w-full h-full object-cover grayscale-[0.15] hover:grayscale-0 transition-[filter] duration-700"
+								loading="eager"
+							/>
+						</div>
+						<div className="mt-3 flex items-center justify-between text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase">
+							<span>Fig. 01 — The Studio</span>
+							<span>Aveiro / PT</span>
 						</div>
 					</div>
 				</div>
