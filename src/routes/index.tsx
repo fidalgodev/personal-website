@@ -120,19 +120,19 @@ function HomePage() {
 						</div>
 					</div>
 
-					{/* Portrait — natural 4:5 aspect with fade edges */}
+					{/* Portrait — natural 4:5 aspect */}
 					<div className="fade-up delay-2 order-2">
-						<div className="hero-portrait-wrap relative aspect-[4/5]">
+						<div className="relative aspect-[4/5] overflow-hidden">
 							<img
 								src="/images/portrait-720w.webp"
 								srcSet="/images/portrait-480w.webp 480w, /images/portrait-720w.webp 720w, /images/portrait-1080w.webp 1080w"
 								sizes="(min-width: 768px) 45vw, 100vw"
 								alt="Fidalgo working at his desk"
-								className="hero-portrait w-full h-full object-cover"
+								className="w-full h-full object-cover grayscale-[0.15] hover:grayscale-0 transition-[filter] duration-700"
 								loading="eager"
 							/>
 						</div>
-						<div className="mt-3 flex items-center justify-between text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase px-1">
+						<div className="mt-3 flex items-center justify-between text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase">
 							<span>Fig. 01 — The Studio</span>
 							<span>Aveiro / PT</span>
 						</div>
