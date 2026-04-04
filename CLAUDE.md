@@ -1,6 +1,6 @@
 # fidalgo.dev
 
-Personal portfolio and blog for Pedro Fidalgo.
+Personal portfolio and blog for Fidalgo.
 
 ## Stack
 
@@ -32,6 +32,7 @@ Personal portfolio and blog for Pedro Fidalgo.
 
 ## Design
 
-- Design spec: `docs/superpowers/specs/2026-04-04-portfolio-redesign-design.md`
-- Clean Swiss aesthetic, Inter + JetBrains Mono fonts
-- Light/Dark/System theme toggle
+- Editorial minimalism with a Clean Swiss foundation
+- Fonts: Instrument Serif (display), Inter (body), JetBrains Mono (code / metadata)
+- Light/Dark/System theme toggle with flash prevention
+- Self-hosted WOFF2 fonts in `public/fonts/`
