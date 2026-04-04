@@ -98,7 +98,9 @@ function HomePage() {
 								<span className="font-mono text-sm tracking-wide underline underline-offset-4 decoration-(--color-border) group-hover:decoration-(--color-accent)">
 									{SITE.email}
 								</span>
-								<span className="text-sm transition-transform group-hover:translate-x-0.5">→</span>
+								<span className="text-sm transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+									↗
+								</span>
 							</a>
 							<span className="hidden sm:inline text-(--color-border)">/</span>
 							<a
