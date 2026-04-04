@@ -16,9 +16,11 @@ export default defineConfig({
 		tailwindcss(),
 		contentCollections(),
 		tanstackStart({
+			pages: [{ path: "/" }, { path: "/blog" }, { path: "/uses" }],
 			prerender: {
 				enabled: true,
-				crawlLinks: true,
+				crawlLinks: false,
+				autoStaticPathsDiscovery: false,
 			},
 			sitemap: {
 				enabled: true,
