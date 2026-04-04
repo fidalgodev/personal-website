@@ -20,6 +20,14 @@ export const Route = createFileRoute("/blog/")({
 			{ property: "og:title", content: `Blog — ${SITE.name}` },
 			{ property: "og:type", content: "website" },
 			{ property: "og:url", content: `${SITE.url}/blog` },
+			{ property: "og:image", content: `${SITE.url}${SITE.ogImage}` },
+			{ name: "twitter:card", content: "summary_large_image" },
+			{ name: "twitter:title", content: `Blog — ${SITE.name}` },
+			{
+				name: "twitter:description",
+				content:
+					"Writing about building products, technical deep dives, and lessons from shipping side projects.",
+			},
 		],
 		links: [{ rel: "canonical", href: `${SITE.url}/blog` }],
 	}),
@@ -29,7 +37,7 @@ export const Route = createFileRoute("/blog/")({
 function BlogPage() {
 	return (
 		<div className="max-w-3xl mx-auto px-6 py-16">
-			<SectionLabel>Blog</SectionLabel>
+			<SectionLabel as="p">Blog</SectionLabel>
 			<h1 className="text-2xl font-medium mb-8">Writing</h1>
 			{publishedPosts.length === 0 ? (
 				<p className="text-sm text-(--color-text-muted) italic">

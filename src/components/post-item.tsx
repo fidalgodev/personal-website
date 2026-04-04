@@ -3,12 +3,13 @@ import { Link } from "@tanstack/react-router"
 type PostItemProps = {
 	title: string
 	date: string
+	dateIso?: string
 	description: string
 	slug: string
 	tags?: string[]
 }
 
-export function PostItem({ title, date, description, slug, tags }: PostItemProps) {
+export function PostItem({ title, date, dateIso, description, slug, tags }: PostItemProps) {
 	return (
 		<Link
 			to="/blog/$slug"
@@ -19,7 +20,9 @@ export function PostItem({ title, date, description, slug, tags }: PostItemProps
 				<h3 className="text-base font-medium text-(--color-text) group-hover:text-(--color-accent) transition-colors">
 					{title}
 				</h3>
-				<time className="text-sm text-(--color-text-muted) shrink-0">{date}</time>
+				<time dateTime={dateIso} className="text-sm text-(--color-text-muted) shrink-0">
+					{date}
+				</time>
 			</div>
 			<p className="text-sm text-(--color-text-secondary) mt-1">{description}</p>
 			{tags && tags.length > 0 && (

@@ -1,5 +1,5 @@
 import { MDXContent } from "@content-collections/mdx/react"
-import { createFileRoute, notFound } from "@tanstack/react-router"
+import { createFileRoute, Link, notFound } from "@tanstack/react-router"
 import { allPosts } from "content-collections"
 import { mdxComponents } from "~/components/mdx-components"
 import { SITE } from "~/lib/constants"
@@ -12,6 +12,7 @@ export const Route = createFileRoute("/blog/$slug")({
 		return { post }
 	},
 	head: ({ loaderData }) => {
+		if (!loaderData) return {}
 		const { post } = loaderData
 		return {
 			meta: [
@@ -68,16 +69,16 @@ function BlogPost() {
 
 	return (
 		<article className="max-w-3xl mx-auto px-6 py-16">
-			<a
-				href="/blog"
+			<Link
+				to="/blog"
 				className="text-sm text-(--color-text-muted) hover:text-(--color-text) transition-colors mb-8 inline-block"
 			>
 				← Back to blog
-			</a>
+			</Link>
 			<header className="mb-10">
 				<h1 className="text-2xl sm:text-3xl font-medium leading-snug mb-3">{post.title}</h1>
 				<div className="flex items-center gap-3 text-sm text-(--color-text-muted)">
-					<time>{formattedDate}</time>
+					<time dateTime={post.date}>{formattedDate}</time>
 					<span>·</span>
 					<span>{readingTime}</span>
 				</div>

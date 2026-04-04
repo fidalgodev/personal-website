@@ -1,7 +1,7 @@
-export function SectionLabel({ children }: { children: string }) {
+export function SectionLabel({ children, as: Tag = "h2" }: { children: string; as?: "h2" | "p" }) {
 	return (
-		<h2 className="text-xs uppercase tracking-[0.2em] text-(--color-text-muted) mb-6">
+		<Tag className="text-xs uppercase tracking-[0.2em] text-(--color-text-muted) mb-6">
 			{children}
-		</h2>
+		</Tag>
 	)
 }
