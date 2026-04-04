@@ -56,7 +56,7 @@ export const CV_EXPERIENCE: CvEntry[] = [
 		period: "Dec 2021 — Present",
 		roles: [
 			{
-				title: "Senior Software Engineer",
+				title: "Senior Product Engineer",
 				period: "Sep 2023 — Present",
 				highlights: [
 					"Full-stack product ownership across the Prolific platform, shipping end-to-end features from database to UI.",
@@ -71,7 +71,7 @@ export const CV_EXPERIENCE: CvEntry[] = [
 				highlights: [
 					"Built and shipped Vue.js features across the Prolific platform, focused on participant and researcher experiences.",
 					"Collaborated with designers and PMs to turn specs into production-ready UI.",
-					"Promoted to Senior Software Engineer after ~2 years.",
+					"Promoted to Senior Product Engineer after ~2 years.",
 				],
 			},
 		],
