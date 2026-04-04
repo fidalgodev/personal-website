@@ -19,6 +19,14 @@
 		"react-dom": "^19.1.0",
 		"zod": "^4.3.6"
 	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@parcel/watcher",
+			"esbuild",
+			"lefthook",
+			"sharp"
+		]
+	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
 		"@content-collections/core": "^0.14.3",
@@ -32,8 +40,10 @@
 		"@vitejs/plugin-react": "^4.5.0",
 		"lefthook": "^1.11.0",
 		"rehype-pretty-code": "^0.14.3",
+		"sharp": "^0.34.5",
 		"shiki": "^4.0.2",
 		"tailwindcss": "^4.1.0",
+		"tsx": "^4.21.0",
 		"typescript": "^5.8.0",
 		"vite": "^8.0.0"
 	}
