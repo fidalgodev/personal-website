@@ -1,0 +1,8 @@
+node_modules
+dist
+.content-collections
+.netlify
+.vinxi
+*.local
+.superpowers
+tmp
