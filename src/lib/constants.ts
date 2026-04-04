@@ -9,6 +9,12 @@ export const SITE = {
 	ogImage: "/images/og-image.jpg",
 } as const
 
+export const COMPANIES = {
+	prolific: "https://www.prolific.com/",
+	mindera: "https://mindera.com/",
+	dunelm: "https://www.dunelm.com/",
+} as const
+
 export const SOCIALS = [
 	{ name: "GitHub", url: "https://github.com/fidalgodev/", label: "GitHub profile" },
 	{
