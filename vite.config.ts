@@ -12,5 +12,20 @@ export default defineConfig({
 	resolve: {
 		tsconfigPaths: true,
 	},
-	plugins: [tailwindcss(), contentCollections(), tanstackStart(), netlify(), viteReact()],
+	plugins: [
+		tailwindcss(),
+		contentCollections(),
+		tanstackStart({
+			prerender: {
+				enabled: true,
+				crawlLinks: true,
+			},
+			sitemap: {
+				enabled: true,
+				host: "https://fidalgo.dev",
+			},
+		}),
+		netlify(),
+		viteReact(),
+	],
 })

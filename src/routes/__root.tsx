@@ -16,7 +16,10 @@ export const Route = createRootRoute({
 			{ title: SITE.title },
 			{ name: "description", content: SITE.description },
 		],
-		links: [{ rel: "stylesheet", href: appCss }],
+		links: [
+			{ rel: "stylesheet", href: appCss },
+			{ rel: "alternate", type: "application/rss+xml", title: SITE.name, href: "/rss.xml" },
+		],
 		scripts: [
 			{
 				children: themeFlashScript,
