@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import {
 	CV_EDUCATION,
 	CV_EXPERIENCE,
@@ -70,12 +70,14 @@ function CvPage() {
 							{SITE.email}
 						</a>
 						<span>·</span>
-						<a href={SITE.url} className="hover:text-(--color-text) transition-colors">
+						<Link to="/" className="hover:text-(--color-text) transition-colors">
 							fidalgo.dev
-						</a>
+						</Link>
 						<span>·</span>
 						<a
 							href="https://github.com/fidalgodev/"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="hover:text-(--color-text) transition-colors"
 						>
 							github.com/fidalgodev
@@ -83,6 +85,8 @@ function CvPage() {
 						<span>·</span>
 						<a
 							href="https://www.linkedin.com/in/fidalgodev/"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="hover:text-(--color-text) transition-colors"
 						>
 							linkedin.com/in/fidalgodev

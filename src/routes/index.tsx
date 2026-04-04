@@ -90,15 +90,15 @@ function HomePage() {
 						</div>
 
 						{/* CTA row */}
-						<div className="fade-up delay-5 flex flex-wrap items-center gap-x-5 gap-y-3 pt-6 border-t border-(--color-border)">
+						<div className="fade-up delay-5 flex flex-wrap items-baseline gap-x-5 gap-y-3 pt-6 border-t border-(--color-border)">
 							<a
 								href={`mailto:${SITE.email}`}
-								className="group inline-flex items-center gap-2 text-(--color-text) hover:text-(--color-accent) transition-colors"
+								className="group inline-flex items-baseline gap-1.5 text-(--color-text) hover:text-(--color-accent) transition-colors"
 							>
 								<span className="font-mono text-sm tracking-wide underline underline-offset-4 decoration-(--color-border) group-hover:decoration-(--color-accent)">
 									{SITE.email}
 								</span>
-								<span className="text-sm transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+								<span className="font-mono text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
 									↗
 								</span>
 							</a>
@@ -107,7 +107,7 @@ function HomePage() {
 								href="https://www.linkedin.com/in/fidalgodev/"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="group inline-flex items-center gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
+								className="group inline-flex items-baseline gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
 							>
 								<span>LinkedIn</span>
 								<span className="text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -116,10 +116,10 @@ function HomePage() {
 							</a>
 							<Link
 								to="/cv"
-								className="group inline-flex items-center gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
+								className="group inline-flex items-baseline gap-1.5 font-mono text-sm tracking-wide text-(--color-text-muted) hover:text-(--color-text) transition-colors"
 							>
 								<span>CV</span>
-								<span className="transition-transform group-hover:translate-x-0.5">→</span>
+								<span className="text-xs transition-transform group-hover:translate-x-0.5">→</span>
 							</Link>
 						</div>
 					</div>
