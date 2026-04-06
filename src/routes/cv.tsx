@@ -59,8 +59,8 @@ function CvPage() {
 						Fidalgo<span className="text-(--color-accent)">.</span>
 					</h1>
 					<p className="text-lg text-(--color-text-secondary) mb-5">
-						<span className="display-italic">Product engineer</span> building end-to-end. Based in
-						Aveiro, Portugal.
+						<span className="display-italic">Senior Product Engineer</span> building end-to-end.
+						Based in Aveiro, Portugal.
 					</p>
 					<div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-(--color-text-muted) uppercase tracking-wider">
 						<a

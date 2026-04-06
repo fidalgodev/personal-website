@@ -66,7 +66,9 @@ function HomePage() {
 						</div>
 
 						<h1 className="fade-up delay-2 display text-5xl sm:text-6xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-6">
-							<span className="display-italic text-(--color-text-secondary)">Product</span>
+							<span className="display-italic text-(--color-text-secondary)">Senior</span>
+							<br />
+							Product
 							<br />
 							Engineer<span className="text-(--color-accent)">.</span>
 						</h1>
