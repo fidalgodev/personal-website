@@ -64,7 +64,7 @@ export const CV_EXPERIENCE: CvEntry[] = [
 					"Built and maintained design system components used across the platform, improving frontend consistency and velocity.",
 					"Drove participant experience improvements — onboarding flows, UI workflows, and changes that increased engagement and retention.",
 					"Improved internal admin tooling, transforming support team workflows and efficiency.",
-					"Cross-team collaborator — from tackling production incidents off-hours to switching teams entirely when the company needed it most.",
+					"Proactive across the company — from tackling production incidents off-hours to embedding with other teams to share frontend expertise.",
 					"Led the Vue 3 migration and company rebrand implementation across the web client.",
 					"Frontend quality advocate — knowledge sharing, code reviews, and mentoring less experienced engineers.",
 					"Full-stack delivery across Python, Django, Vue, TypeScript, MongoDB, Redis, and Kubernetes.",

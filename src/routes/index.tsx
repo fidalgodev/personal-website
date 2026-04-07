@@ -196,8 +196,8 @@ function HomePage() {
 							</a>
 							, where I focus on making the platform better for everyone who uses it — from leading
 							accessibility initiatives and building design system components, to improving internal
-							tooling and jumping across teams when something critical needs fixing. When I'm
-							building for myself, I reach for{" "}
+							tooling and mentoring engineers across teams. When I'm building for myself, I reach
+							for{" "}
 							<span className="display-italic text-(--color-text)">
 								React, TypeScript, Tailwind, and Postgres
 							</span>
