@@ -74,7 +74,7 @@ function HomePage() {
 						</h1>
 
 						<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-6">
-							I ship full products from database to UI.{" "}
+							I build products people actually use — and I care about every part of that experience.{" "}
 							<span className="display-italic text-(--color-text)">
 								Self-taught, endlessly curious,
 							</span>{" "}
@@ -185,7 +185,7 @@ function HomePage() {
 							, one of the UK's largest home furnishings retailers.
 						</p>
 						<p>
-							Today I'm a Senior Product Engineer at{" "}
+							Today I'm a Product Engineer at{" "}
 							<a
 								href={COMPANIES.prolific}
 								target="_blank"
@@ -194,11 +194,14 @@ function HomePage() {
 							>
 								Prolific
 							</a>
-							, building with Python and Vue. But my heart is in the React and Node ecosystem —{" "}
+							, where I focus on making the platform better for everyone who uses it — from leading
+							accessibility initiatives and building design system components, to improving internal
+							tooling and jumping across teams when something critical needs fixing. When I'm
+							building for myself, I reach for{" "}
 							<span className="display-italic text-(--color-text)">
-								TypeScript, Tailwind, Hono, tRPC, and Postgres
-							</span>{" "}
-							are what I reach for when I'm building for myself.
+								React, TypeScript, Tailwind, and Postgres
+							</span>
+							.
 						</p>
 						<p>
 							Outside of work, I build my own things.{" "}
