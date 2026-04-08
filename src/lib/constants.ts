@@ -60,7 +60,7 @@ export const CV_EXPERIENCE: CvEntry[] = [
 				highlights: [
 					"Own features end-to-end across the platform, from design through to production support.",
 					"Designed and built a study distribution system that reduced participant-facing errors by ~75% — a creative solution that worked within existing infrastructure constraints, avoiding months of cross-team work.",
-					"Led accessibility (WCAG AA) initiatives including automation testing frameworks adopted across multiple teams.",
+					"Led accessibility (WCAG AA) initiatives, building automation testing frameworks and influencing other teams to adopt them.",
 					"Built and maintained design system components used across the platform, improving frontend consistency and velocity.",
 					"Drove participant experience improvements — onboarding flows, UI workflows, and changes that increased engagement and retention.",
 					"Improved internal admin tooling, transforming support team workflows and efficiency.",
