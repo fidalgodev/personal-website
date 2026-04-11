@@ -1,5 +1,5 @@
+import { cloudflare } from "@cloudflare/vite-plugin"
 import contentCollections from "@content-collections/vite"
-import netlify from "@netlify/vite-plugin-tanstack-start"
 import tailwindcss from "@tailwindcss/vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import viteReact from "@vitejs/plugin-react"
@@ -13,6 +13,7 @@ export default defineConfig({
 		tsconfigPaths: true,
 	},
 	plugins: [
+		cloudflare({ viteEnvironment: { name: "ssr" } }),
 		tailwindcss(),
 		contentCollections(),
 		tanstackStart({
@@ -27,7 +28,6 @@ export default defineConfig({
 				host: "https://fidalgo.dev",
 			},
 		}),
-		netlify(),
 		viteReact(),
 	],
 })

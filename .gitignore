@@ -2,6 +2,7 @@ node_modules
 dist
 .content-collections
 .netlify
+.wrangler
 .vinxi
 *.local
 .superpowers
