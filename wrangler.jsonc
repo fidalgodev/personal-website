@@ -4,5 +4,12 @@
 	"compatibility_date": "2026-04-11",
 	"compatibility_flags": ["nodejs_compat"],
 	"main": "@tanstack/react-start/server-entry",
-	"observability": { "enabled": true }
+	"observability": { "enabled": true },
+	// Disable the default *.workers.dev subdomain and per-deployment
+	// preview URLs. The Worker is only reachable via custom routes
+	// (to be configured after the DNS nameserver migration to CF).
+	// Flip these back to true temporarily if you need to debug a
+	// pre-domain issue from the public internet.
+	"workers_dev": false,
+	"preview_urls": false
 }
