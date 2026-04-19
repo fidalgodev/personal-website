@@ -41,10 +41,10 @@ export const Route = createRootRoute({
 				children: themeFlashScript,
 			},
 			{
-				src: "/stats/script.js",
+				src: "/_u/script.js",
 				defer: true,
 				"data-website-id": "9faa61e8-d591-4d21-83a6-1c615672b09e",
-				"data-host-url": "/stats",
+				"data-host-url": "https://fidalgo.dev/_u",
 			},
 		],
 	}),
