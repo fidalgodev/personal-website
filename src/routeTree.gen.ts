@@ -14,7 +14,9 @@ import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as StatsScriptDotjsRouteImport } from './routes/stats/script[.]js'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as StatsApiSendRouteImport } from './routes/stats/api/send'
 
 const UsesRoute = UsesRouteImport.update({
   id: '/uses',
@@ -41,9 +43,19 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StatsScriptDotjsRoute = StatsScriptDotjsRouteImport.update({
+  id: '/stats/script.js',
+  path: '/stats/script.js',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatsApiSendRoute = StatsApiSendRouteImport.update({
+  id: '/stats/api/send',
+  path: '/stats/api/send',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -53,7 +65,9 @@ export interface FileRoutesByFullPath {
   '/rss.xml': typeof RssDotxmlRoute
   '/uses': typeof UsesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/stats/script.js': typeof StatsScriptDotjsRoute
   '/blog/': typeof BlogIndexRoute
+  '/stats/api/send': typeof StatsApiSendRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +75,9 @@ export interface FileRoutesByTo {
   '/rss.xml': typeof RssDotxmlRoute
   '/uses': typeof UsesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/stats/script.js': typeof StatsScriptDotjsRoute
   '/blog': typeof BlogIndexRoute
+  '/stats/api/send': typeof StatsApiSendRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,14 +86,41 @@ export interface FileRoutesById {
   '/rss.xml': typeof RssDotxmlRoute
   '/uses': typeof UsesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/stats/script.js': typeof StatsScriptDotjsRoute
   '/blog/': typeof BlogIndexRoute
+  '/stats/api/send': typeof StatsApiSendRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cv' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog/'
+  fullPaths:
+    | '/'
+    | '/cv'
+    | '/rss.xml'
+    | '/uses'
+    | '/blog/$slug'
+    | '/stats/script.js'
+    | '/blog/'
+    | '/stats/api/send'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cv' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog'
-  id: '__root__' | '/' | '/cv' | '/rss.xml' | '/uses' | '/blog/$slug' | '/blog/'
+  to:
+    | '/'
+    | '/cv'
+    | '/rss.xml'
+    | '/uses'
+    | '/blog/$slug'
+    | '/stats/script.js'
+    | '/blog'
+    | '/stats/api/send'
+  id:
+    | '__root__'
+    | '/'
+    | '/cv'
+    | '/rss.xml'
+    | '/uses'
+    | '/blog/$slug'
+    | '/stats/script.js'
+    | '/blog/'
+    | '/stats/api/send'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,7 +129,9 @@ export interface RootRouteChildren {
   RssDotxmlRoute: typeof RssDotxmlRoute
   UsesRoute: typeof UsesRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  StatsScriptDotjsRoute: typeof StatsScriptDotjsRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  StatsApiSendRoute: typeof StatsApiSendRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -126,11 +171,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stats/script.js': {
+      id: '/stats/script.js'
+      path: '/stats/script.js'
+      fullPath: '/stats/script.js'
+      preLoaderRoute: typeof StatsScriptDotjsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stats/api/send': {
+      id: '/stats/api/send'
+      path: '/stats/api/send'
+      fullPath: '/stats/api/send'
+      preLoaderRoute: typeof StatsApiSendRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -142,7 +201,9 @@ const rootRouteChildren: RootRouteChildren = {
   RssDotxmlRoute: RssDotxmlRoute,
   UsesRoute: UsesRoute,
   BlogSlugRoute: BlogSlugRoute,
+  StatsScriptDotjsRoute: StatsScriptDotjsRoute,
   BlogIndexRoute: BlogIndexRoute,
+  StatsApiSendRoute: StatsApiSendRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
