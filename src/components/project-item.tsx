@@ -6,7 +6,7 @@ export function ProjectItem({ project, index }: { project: Project; index?: numb
 			href={project.url}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="group grid grid-cols-[auto_1fr_auto] gap-4 sm:gap-6 items-start py-6 sm:py-8 border-b border-(--color-border) last:border-b-0 transition-all hover:px-2"
+			className="group grid grid-cols-[auto_1fr_auto] gap-4 sm:gap-6 items-start py-6 sm:py-8 border-b border-(--color-border) last:border-b-0"
 		>
 			<span className="display text-xl text-(--color-text-muted) leading-none pt-1 w-6 tabular-nums">
 				{typeof index === "number" ? String(index + 1).padStart(2, "0") : ""}

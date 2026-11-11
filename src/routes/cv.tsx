@@ -11,12 +11,12 @@ import {
 export const Route = createFileRoute("/cv")({
 	head: () => ({
 		meta: [
-			{ title: `CV — ${SITE.name}` },
+			{ title: `CV · ${SITE.name}` },
 			{
 				name: "description",
-				content: "Curriculum vitae for Fidalgo — product engineer based in Aveiro, Portugal.",
+				content: "CV for Fidalgo, a Senior Product Engineer based in Aveiro, Portugal.",
 			},
-			{ property: "og:title", content: `CV — ${SITE.name}` },
+			{ property: "og:title", content: `CV · ${SITE.name}` },
 			{ property: "og:type", content: "profile" },
 			{ property: "og:url", content: `${SITE.url}/cv` },
 			{ property: "og:image", content: `${SITE.url}${SITE.ogImage}` },
@@ -59,8 +59,8 @@ function CvPage() {
 						Fidalgo<span className="text-(--color-accent)">.</span>
 					</h1>
 					<p className="text-lg text-(--color-text-secondary) mb-5">
-						<span className="display-italic">Product Engineer</span> focused on impact, not just
-						code. Based in Aveiro, Portugal.
+						<span className="display-italic">Senior Product Engineer</span> based in Aveiro,
+						Portugal. I care about what software does for the people using it.
 					</p>
 					<div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-(--color-text-muted) uppercase tracking-wider">
 						<a
@@ -136,8 +136,11 @@ function CvPage() {
 										</div>
 										<ul className="space-y-1.5 text-sm text-(--color-text-secondary) leading-relaxed">
 											{role.highlights.map((h) => (
-												<li key={h} className="flex gap-2">
-													<span className="text-(--color-text-muted) shrink-0">—</span>
+												<li key={h} className="flex gap-2.5">
+													<span
+														aria-hidden="true"
+														className="mt-[0.65em] h-1 w-1 rounded-full bg-(--color-text-muted) shrink-0"
+													/>
 													<span>{h}</span>
 												</li>
 											))}

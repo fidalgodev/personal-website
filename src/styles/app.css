@@ -52,7 +52,6 @@
 	--color-accent: #2563eb;
 	--color-border: #e5e5e5;
 	--color-surface: #ffffff;
-	--color-green-dot: #22c55e;
 }
 
 /* Dark mode overrides */
@@ -64,7 +63,6 @@
 	--color-accent: #60a5fa;
 	--color-border: #2a2a2a;
 	--color-surface: #1a1a1a;
-	--color-green-dot: #22c55e;
 }
 
 /* ── Base Styles ── */
@@ -96,24 +94,6 @@ body {
 	font-style: italic;
 	font-weight: 400;
 	letter-spacing: -0.005em;
-}
-
-/* ── Animated status dot ── */
-
-@keyframes pulse-dot {
-	0%,
-	100% {
-		transform: scale(1);
-		opacity: 1;
-	}
-	50% {
-		transform: scale(1.4);
-		opacity: 0.7;
-	}
-}
-
-.pulse-dot {
-	animation: pulse-dot 2.5s ease-in-out infinite;
 }
 
 /* ── Subtle entrance animations ── */

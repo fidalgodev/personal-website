@@ -9,7 +9,7 @@ export function Footer() {
 				{/* Top row: big mono line */}
 				<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8">
 					<p className="display text-3xl sm:text-4xl leading-tight text-(--color-text)">
-						Let's build something <span className="display-italic">together.</span>
+						Want to chat? <span className="display-italic">Say hello.</span>
 					</p>
 					<a
 						href={`mailto:${SITE.email}`}

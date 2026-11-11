@@ -10,18 +10,18 @@ const publishedPosts = allPosts
 export const Route = createFileRoute("/blog/")({
 	head: () => ({
 		meta: [
-			{ title: `Blog — ${SITE.name}` },
+			{ title: `Blog · ${SITE.name}` },
 			{
 				name: "description",
 				content:
 					"Writing about building products, technical deep dives, and lessons from shipping side projects.",
 			},
-			{ property: "og:title", content: `Blog — ${SITE.name}` },
+			{ property: "og:title", content: `Blog · ${SITE.name}` },
 			{ property: "og:type", content: "website" },
 			{ property: "og:url", content: `${SITE.url}/blog` },
 			{ property: "og:image", content: `${SITE.url}${SITE.ogImage}` },
 			{ name: "twitter:card", content: "summary_large_image" },
-			{ name: "twitter:title", content: `Blog — ${SITE.name}` },
+			{ name: "twitter:title", content: `Blog · ${SITE.name}` },
 			{
 				name: "twitter:description",
 				content:
@@ -49,8 +49,8 @@ function BlogPage() {
 						<span className="display-italic">Soon.</span>
 					</p>
 					<p className="text-(--color-text-secondary) leading-relaxed max-w-prose">
-						No posts yet — but they're coming. I'll be writing about building products, technical
-						deep dives, and lessons from shipping side projects.
+						Nothing here yet. When there is, it'll be about building products, the technical side of
+						things, and what I learn shipping side projects.
 					</p>
 				</div>
 			) : (

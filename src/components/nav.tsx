@@ -1,5 +1,8 @@
 import { Link } from "@tanstack/react-router"
+import { allPosts } from "content-collections"
 import { ThemeToggle } from "./theme-toggle"
+
+const hasPosts = allPosts.some((p) => !p.draft)
 
 export function Nav() {
 	return (
@@ -24,17 +27,17 @@ export function Nav() {
 				>
 					projects
 				</a>
-				<Link
-					to="/blog"
-					className="text-sm text-(--color-text-secondary) hover:text-(--color-text) transition-colors"
-					activeProps={{ className: "text-(--color-text) font-medium" }}
-				>
-					blog
-				</Link>
+				{hasPosts && (
+					<Link
+						to="/blog"
+						className="text-sm text-(--color-text-secondary) hover:text-(--color-text) data-[status=active]:text-(--color-text) data-[status=active]:underline underline-offset-[6px] decoration-(--color-border) transition-colors"
+					>
+						blog
+					</Link>
+				)}
 				<Link
 					to="/uses"
-					className="text-sm text-(--color-text-secondary) hover:text-(--color-text) transition-colors"
-					activeProps={{ className: "text-(--color-text) font-medium" }}
+					className="text-sm text-(--color-text-secondary) hover:text-(--color-text) data-[status=active]:text-(--color-text) data-[status=active]:underline underline-offset-[6px] decoration-(--color-border) transition-colors"
 				>
 					uses
 				</Link>

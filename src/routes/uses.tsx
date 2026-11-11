@@ -4,17 +4,17 @@ import { SITE } from "~/lib/constants"
 export const Route = createFileRoute("/uses")({
 	head: () => ({
 		meta: [
-			{ title: `Uses — ${SITE.name}` },
+			{ title: `Uses · ${SITE.name}` },
 			{
 				name: "description",
 				content: "Tools, software, and hardware I use for development and everyday work.",
 			},
-			{ property: "og:title", content: `Uses — ${SITE.name}` },
+			{ property: "og:title", content: `Uses · ${SITE.name}` },
 			{ property: "og:type", content: "website" },
 			{ property: "og:url", content: `${SITE.url}/uses` },
 			{ property: "og:image", content: `${SITE.url}${SITE.ogImage}` },
 			{ name: "twitter:card", content: "summary_large_image" },
-			{ name: "twitter:title", content: `Uses — ${SITE.name}` },
+			{ name: "twitter:title", content: `Uses · ${SITE.name}` },
 			{
 				name: "twitter:description",
 				content: "Tools, software, and hardware I use for development and everyday work.",
@@ -35,15 +35,15 @@ const USES: UsesCategory[] = [
 		name: "Hardware",
 		items: [
 			{
-				name: "MacBook Pro 16” (M4 Pro, 24GB)",
+				name: "MacBook Pro 16” (M5 Pro, 48GB)",
 				note: "My main machine. Silly fast, all-day battery.",
 			},
 			{
 				name: "Apple Studio Display XDR",
-				note: "27” 5K Retina XDR, 120Hz, 1000 nits SDR / 2000 nits HDR",
+				note: "27” 5K, 120Hz, and bright enough to be a little ridiculous",
 			},
-			{ name: "Apple Magic Keyboard", note: "Clean, low-profile, pairs perfectly with macOS" },
-			{ name: "Keychron M6 Mouse", note: "Lightweight, ergonomic, works wired or wireless" },
+			{ name: "NuPhy Air75 (Raycast Edition)", note: "Low profile mechanical, great to type on" },
+			{ name: "Logitech MX Master 4S", note: "The scroll wheel alone is worth it" },
 		],
 	},
 	{
@@ -51,7 +51,7 @@ const USES: UsesCategory[] = [
 		items: [
 			{
 				name: "Bose QuietComfort Ultra (Gen 2)",
-				note: "For deep focus and long flights — best ANC I've tried",
+				note: "For deep focus and long flights. Best noise cancelling I've tried",
 			},
 			{ name: "AirPods Pro 3", note: "For everything else on the go" },
 		],
@@ -59,10 +59,9 @@ const USES: UsesCategory[] = [
 	{
 		name: "Development",
 		items: [
-			{ name: "Zed", note: "Primary editor — fast, clean, collaborative" },
+			{ name: "VS Code", note: "My main editor" },
 			{ name: "Warp", note: "Terminal of choice" },
 			{ name: "Claude Code", note: "AI pair programmer I reach for daily" },
-			{ name: "Git", note: "Version control, obviously" },
 		],
 	},
 	{
@@ -70,7 +69,7 @@ const USES: UsesCategory[] = [
 		items: [
 			{ name: "React + TypeScript", note: "Frontend of choice" },
 			{ name: "Tailwind CSS", note: "Utility-first styling" },
-			{ name: "Hono + tRPC", note: "Backend API layer" },
+			{ name: "Hono + OpenAPI", note: "Typed APIs with a proper spec" },
 			{ name: "PostgreSQL", note: "Database for everything" },
 		],
 	},
@@ -88,11 +87,7 @@ const USES: UsesCategory[] = [
 	{
 		name: "Also Experienced With",
 		items: [
-			{ name: "Next.js", note: "React meta-framework for full-stack apps" },
-			{
-				name: "TanStack Start / Router / Query",
-				note: "Type-safe routing and async state (this site runs on Start)",
-			},
+			{ name: "TanStack Router + Query", note: "Type-safe routing and server state" },
 			{ name: "Node.js", note: "Server runtime for most of my side projects" },
 			{ name: "FastAPI", note: "Modern Python APIs" },
 			{ name: "Styled Components", note: "CSS-in-JS for React" },
@@ -110,8 +105,7 @@ function UsesPage() {
 				What I <span className="display-italic text-(--color-text-secondary)">use</span>
 			</h1>
 			<p className="text-(--color-text-secondary) max-w-xl mb-16 leading-relaxed">
-				Tools, software, and hardware that power my daily workflow. Constantly evolving, rarely
-				settled.
+				The hardware, apps, and tech I use day to day. It changes more often than I'd like to admit.
 			</p>
 
 			<div className="space-y-16">
@@ -128,10 +122,8 @@ function UsesPage() {
 						</div>
 						<ul className="grid grid-cols-1 gap-y-4 gap-x-8 sm:grid-cols-2">
 							{category.items.map((item) => (
-								<li key={item.name} className="group">
-									<div className="display text-xl text-(--color-text) group-hover:text-(--color-accent) transition-colors">
-										{item.name}
-									</div>
+								<li key={item.name}>
+									<div className="display text-xl text-(--color-text)">{item.name}</div>
 									<div className="text-sm text-(--color-text-muted) mt-0.5">{item.note}</div>
 								</li>
 							))}

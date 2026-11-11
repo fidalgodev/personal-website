@@ -43,6 +43,9 @@ export const Route = createFileRoute("/")({
 	component: HomePage,
 })
 
+const featuredProjects = PROJECTS.filter((p) => !p.earlier)
+const earlierProjects = PROJECTS.filter((p) => p.earlier)
+
 const inlineLinkClass =
 	"text-(--color-text) underline underline-offset-4 decoration-(--color-border) hover:decoration-(--color-accent) transition-colors"
 
@@ -54,14 +57,14 @@ function HomePage() {
 
 	return (
 		<div className="relative z-10">
-			{/* Hero — balanced 2-column with contained portrait */}
+			{/* Hero: balanced 2-column with contained portrait */}
 			<section className="max-w-5xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24">
 				<div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-10 md:gap-12 lg:gap-16 items-center">
 					{/* Text */}
 					<div className="order-1">
 						<div className="fade-up delay-1 flex items-center gap-3 mb-7">
 							<span className="font-mono text-[10px] tracking-[0.18em] uppercase text-(--color-text-muted)">
-								PF · Aveiro, Portugal · {new Date().getFullYear()}
+								Based in Aveiro, Portugal
 							</span>
 						</div>
 
@@ -73,26 +76,14 @@ function HomePage() {
 							Engineer<span className="text-(--color-accent)">.</span>
 						</h1>
 
-						<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-6">
-							I build products people actually use — and I care about every part of that experience.{" "}
-							<span className="display-italic text-(--color-text)">
-								Self-taught, endlessly curious,
-							</span>{" "}
-							and always building something on the side.
+						<p className="fade-up delay-3 text-base sm:text-lg text-(--color-text-secondary) leading-relaxed max-w-md mb-8">
+							I make software people use every day, and I care about how every part of it feels. I'm{" "}
+							<span className="display-italic text-(--color-text)">self-taught</span>, and there's
+							always a side project on the go.
 						</p>
 
-						<div className="fade-up delay-4 flex items-center gap-3 mb-8">
-							<span className="relative flex h-2 w-2">
-								<span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-(--color-green-dot) opacity-60" />
-								<span className="relative inline-flex h-2 w-2 rounded-full bg-(--color-green-dot)" />
-							</span>
-							<span className="font-mono text-[11px] tracking-wider uppercase text-(--color-text-muted)">
-								Open to interesting conversations
-							</span>
-						</div>
-
 						{/* CTA row */}
-						<div className="fade-up delay-5 flex flex-wrap items-baseline gap-x-5 gap-y-3 pt-6 border-t border-(--color-border)">
+						<div className="fade-up delay-4 flex flex-wrap items-baseline gap-x-5 gap-y-3 pt-6 border-t border-(--color-border)">
 							<a
 								href={`mailto:${SITE.email}`}
 								className="group inline-flex items-baseline gap-1.5 text-(--color-text) hover:text-(--color-accent) transition-colors"
@@ -126,7 +117,7 @@ function HomePage() {
 						</div>
 					</div>
 
-					{/* Portrait — natural 4:5 aspect */}
+					{/* Portrait: natural 4:5 aspect */}
 					<div className="fade-up delay-2 order-2">
 						<div className="relative aspect-[4/5] overflow-hidden">
 							<img
@@ -143,8 +134,8 @@ function HomePage() {
 							/>
 						</div>
 						<div className="mt-3 flex items-center justify-between text-(--color-text-muted) font-mono text-[10px] tracking-wider uppercase">
-							<span>Fig. 01 — The Studio</span>
-							<span>Aveiro / PT</span>
+							<span>Fig. 01 · Home office</span>
+							<span>Aveiro, PT</span>
 						</div>
 					</div>
 				</div>
@@ -155,16 +146,17 @@ function HomePage() {
 				<SectionLabel number="01">About</SectionLabel>
 				<div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-14">
 					<p className="display text-2xl sm:text-3xl leading-tight text-(--color-text)">
-						Self-taught.{" "}
-						<span className="display-italic text-(--color-text-secondary)">Product-minded.</span>{" "}
-						Building since 2019.
+						I taught myself to code in 2018.{" "}
+						<span className="display-italic text-(--color-text-secondary)">
+							I still haven't stopped.
+						</span>
 					</p>
 					<div className="space-y-5 text-(--color-text-secondary) leading-relaxed max-w-prose">
-						<p>I'm Fidalgo — a software engineer based in Aveiro, Portugal.</p>
+						<p>I'm Fidalgo, a software engineer living in Aveiro, Portugal.</p>
 						<p>
-							In 2018, I decided it was time for a change. I started teaching myself JavaScript
+							In 2018 I decided it was time for a change. I started teaching myself JavaScript
 							before work, fell in love with it, and in January 2019 I quit my job to go all in. Six
-							months later I landed my first engineering role at{" "}
+							months later I got my first engineering job at{" "}
 							<a
 								href={COMPANIES.mindera}
 								target="_blank"
@@ -173,7 +165,7 @@ function HomePage() {
 							>
 								Mindera
 							</a>{" "}
-							in the UK, where I grew into a full-stack developer — most notably working on{" "}
+							in the UK. I grew into a full stack developer there, mostly working on{" "}
 							<a
 								href={COMPANIES.dunelm}
 								target="_blank"
@@ -182,10 +174,10 @@ function HomePage() {
 							>
 								Dunelm
 							</a>
-							, one of the UK's largest home furnishings retailers.
+							, one of the biggest home furnishing retailers in the UK.
 						</p>
 						<p>
-							Today I'm a Product Engineer at{" "}
+							Today I'm a Senior Product Engineer at{" "}
 							<a
 								href={COMPANIES.prolific}
 								target="_blank"
@@ -194,28 +186,27 @@ function HomePage() {
 							>
 								Prolific
 							</a>
-							, where I focus on making the platform better for everyone who uses it — from leading
-							accessibility initiatives and building design system components, to improving internal
-							tooling and mentoring engineers across teams. When I'm building for myself, I reach
-							for{" "}
+							. Most of my time goes into making the platform better for the people who use it. I've
+							led our accessibility work, built design system components, improved internal tools,
+							and mentored engineers across teams. When I'm building for myself, I reach for{" "}
 							<span className="display-italic text-(--color-text)">
 								React, TypeScript, Tailwind, and Postgres
 							</span>
 							.
 						</p>
 						<p>
-							Outside of work, I build my own things.{" "}
+							Outside of work, I build my own things. The biggest one is{" "}
 							<a
-								href="https://zerosum.so/"
+								href="https://zerosumapp.com/"
 								target="_blank"
 								rel="noopener noreferrer"
 								className={inlineLinkClass}
 							>
 								Zerosum
-							</a>{" "}
-							is a budgeting app I built from scratch — a real SaaS product with real users. I like
-							solving problems that I personally have, and turning them into something others can
-							use too.
+							</a>
+							, a zero-based budgeting app I started because I wanted a better way to plan my own
+							money. It's grown to more than 5,000 people, which still surprises me. I like fixing
+							problems I actually have, then making the fix good enough for other people to use.
 						</p>
 					</div>
 				</div>
@@ -225,26 +216,38 @@ function HomePage() {
 			<section id="projects" className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
 				<SectionLabel number="02">Selected Work</SectionLabel>
 				<div>
-					{PROJECTS.map((project, i) => (
+					{featuredProjects.map((project, i) => (
 						<ProjectItem key={project.name} project={project} index={i} />
 					))}
 				</div>
+				{earlierProjects.length > 0 && (
+					<div className="mt-6 pt-6 border-t border-(--color-border) flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
+						<p className="font-mono text-[10px] tracking-wider uppercase text-(--color-text-muted) shrink-0 sm:w-24">
+							Earlier
+						</p>
+						<ul className="space-y-2">
+							{earlierProjects.map((project) => (
+								<li key={project.name} className="text-sm text-(--color-text-secondary)">
+									<a
+										href={project.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className={inlineLinkClass}
+									>
+										{project.name}
+									</a>{" "}
+									<span className="text-(--color-text-muted)">↗</span> {project.description}
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
 			</section>
 
-			{/* Latest Posts */}
-			<section className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
-				<SectionLabel number="03">Writing</SectionLabel>
-				{publishedPosts.length === 0 ? (
-					<div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-14">
-						<p className="display text-2xl leading-tight text-(--color-text-secondary)">
-							<span className="display-italic">Soon.</span>
-						</p>
-						<p className="text-(--color-text-secondary) leading-relaxed max-w-prose">
-							No posts yet — but they're coming. I'll be writing about building products, technical
-							deep dives, and lessons from shipping side projects.
-						</p>
-					</div>
-				) : (
+			{/* Latest Posts (hidden until there's something to show) */}
+			{publishedPosts.length > 0 && (
+				<section className="max-w-5xl mx-auto px-6 py-16 sm:py-20">
+					<SectionLabel number="03">Writing</SectionLabel>
 					<div>
 						{publishedPosts.map((post) => (
 							<PostItem
@@ -262,8 +265,8 @@ function HomePage() {
 							/>
 						))}
 					</div>
-				)}
-			</section>
+				</section>
+			)}
 		</div>
 	)
 }

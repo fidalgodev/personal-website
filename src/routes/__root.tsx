@@ -51,7 +51,7 @@ export const Route = createRootRoute({
 	component: RootComponent,
 	notFoundComponent: () => (
 		<div className="max-w-3xl mx-auto px-6 py-24 text-center">
-			<h1 className="text-4xl font-medium mb-4">404</h1>
+			<h1 className="display text-6xl mb-4">404</h1>
 			<p className="text-(--color-text-secondary) mb-8">
 				This page doesn't exist. Maybe it was moved or you mistyped the URL.
 			</p>
